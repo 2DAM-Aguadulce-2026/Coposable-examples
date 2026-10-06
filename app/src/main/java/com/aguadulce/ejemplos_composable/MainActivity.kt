@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -75,19 +76,26 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
 //                            .padding(10.dp)
                     ) {
-                        ExampleText()
-                        ExampleIcon()
-                        ExampleImage()
-                        ExampleButton()
-                        ExampleFlotatingActionButton { print("Hola") }
-                        ExampleSwitch()
-                        ExampleTextField()
-                        ExampleCard()
-                        ExampleProgressBarIndicator()
-                        ExampleCheckBox()
-                        ExampleRadioButton()
-                        ExampleDatePicker()
-                        ExampleTimePicker()
+                        LazyColumn(
+                            content = {
+                                item { //Normalmente cada elemento de las lazyColumn tiene que ir
+                                       // envuelto en un item{}
+                                    ExampleText()
+                                    ExampleIcon()
+                                    ExampleImage()
+                                    ExampleButton()
+                                    ExampleFlotatingActionButton { print("Hola") }
+                                    ExampleSwitch()
+                                    ExampleTextField()
+                                    ExampleCard()
+                                    ExampleProgressBarIndicator()
+                                    ExampleCheckBox()
+                                    ExampleRadioButton()
+                                    ExampleDatePicker()
+                                    ExampleTimePicker()
+                                }
+                            }
+                        )
                     }
                 }
             }
